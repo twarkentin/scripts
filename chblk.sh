@@ -1,12 +1,12 @@
 #!/bin/bash
 
-
 if [ $# -ne 1 ]; then
    echo "Usage: chblk <block_name>"
    return
 fi
 
 tmp_blk=`/projects/scripts/blk_check.pl $1`
+
 if [ $? != 0 ]; then
    echo "Block '$1' does not exist. Valid blocks are: "
    /projects/scripts/blk_check.pl -h # Display available blocks
@@ -41,14 +41,6 @@ function bld () {
   $scripts/build.pl "$@"
 }
 
-function gbld () {
-  echo "$@"
-  $scripts/gbuild.pl "$@"
-}
-export -f gbld
-
-
 
 export project_cfg="[$txt_color$project_name$project_rev$txt_rst|$txt_color$build_name$txt_rst|$txt_color$blk_name$txt_rst] "
-
 
