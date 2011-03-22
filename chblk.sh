@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# -----------------------------------------------------------------------------
+# FILE NAME      : chblk.bashrc
+# CURRENT AUTHOR : Tim Warkentin
+# AUTHOR'S EMAIL : tim.warkentin@gmail.com
+# -----------------------------------------------------------------------------
+# PURPOSE: Bash script to configure the environment to a specific block.
+# -----------------------------------------------------------------------------
+
 if [ $# -ne 1 ]; then
    echo "Usage: chblk <block_name>"
    return
@@ -10,7 +18,6 @@ tmp_blk=`/projects/scripts/blk_check.pl $1`
 if [ $? != 0 ]; then
    echo "Block '$1' does not exist. Valid blocks are: "
    /projects/scripts/blk_check.pl -h # Display available blocks
-   #$build_setup/blk_check.pl -h # Display available blocks
    return
 fi
 

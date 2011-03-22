@@ -1,20 +1,10 @@
 #!/bin/bash
 # -----------------------------------------------------------------------------
-# Copyright © 2010  MTI Laboratory, Inc. All rights reserved.
-#
-#   This file includes unpublished proprietary source code of MTI Laboratory.
-#   The copyright notice above does not evidence any actual or intended 
-#   publication of such source code. You shall not disclose such source code 
-#   (or any related information) and shall use it only in accordance with the 
-#   terms of the license or confidentiality agreements you have entered into 
-#   with MTI Laboratory.  Distributed to licensed users or owners.
-#
-# -----------------------------------------------------------------------------
 # FILE NAME      : chproj.bashrc
 # CURRENT AUTHOR : Tim Warkentin
-# AUTHOR'S EMAIL : twarkentin@mti.com.tw
+# AUTHOR'S EMAIL : tim.warkentin@gmail.com
 # -----------------------------------------------------------------------------
-# PURPOSE: BASH script to configure the environment to a specific FPGA project.
+# PURPOSE: Bash script to configure the environment to a specific FPGA project.
 # -----------------------------------------------------------------------------
 
 if [ $# -eq 0 ]; then
