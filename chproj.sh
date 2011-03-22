@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # -----------------------------------------------------------------------------
 # FILE NAME      : chproj.bashrc
 # CURRENT AUTHOR : Tim Warkentin
@@ -20,7 +21,7 @@ fi
 export project_rev=""
 
 if [ $# -eq 2 ]; then 
-  if [ ! -d "/projects/$1/$1$2" ]; then
+  if [ ! -d "/projects/$1/rev$2" ]; then
     echo "${1} project revision '${2}' does not exist"
     return
   else
@@ -32,7 +33,7 @@ export project_name="$1"
 if [ -z "$project_rev" ]; then
   export project_path="/projects/$project_name"
 else
-  export project_path="/projects/$project_name/$project_name$project_rev"
+  export project_path="/projects/$project_name/rev$project_rev"
 fi
 
 export svn_repo="http://granite.mtil/projects"
@@ -60,14 +61,8 @@ export -f chbld
 
 function  version_setup () { 
   /projects/scripts/version_setup.pl "$@"
-  #$project_setup/version_setup.pl "$@" 
 }
 export -f version_setup
-
-function  build_setup () { 
-  $project_setup/build_setup.pl "$@" 
-}
-export -f build_setup
 
 function  lsblds () { 
   ls -1 "$builds" 
@@ -79,7 +74,5 @@ alias io='/projects/scripts/io.pl'
 export build_name=""
 export blk_name=""
 
-#export project_cfg="[$txtblu$project_name$project_rev$txtrst] "
 export project_cfg="[$txt_color$project_name$project_rev$txt_rst] "
 
-#export PS1='[\[\e[0;34m\]$project_name$project_rev\[\e[0;37m\]] \w% '
