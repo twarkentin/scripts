@@ -14,6 +14,7 @@ if [ $# -ne 1 ]; then
 fi
 
 tmp_blk=`/projects/scripts/blk_check.pl $1`
+# TODO: replace with generic search
 
 if [ $? != 0 ]; then
    echo "Block '$1' does not exist. Valid blocks are: "
